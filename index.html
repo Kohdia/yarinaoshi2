@@ -71,7 +71,7 @@ var value=0
     function predict() {
         
         // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
+        const prediction =  model.predict(webcam.canvas);
         if (state=="first"){
         if(prediction[0].probability.toFixed(2)>0.8){
           num = 1
