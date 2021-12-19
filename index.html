@@ -54,10 +54,11 @@ function OnButtonClick(){
             labelContainer.appendChild(document.createElement("div"));
         }
     }
-
+var value=0
     async function loop() {
         webcam.update(); // update the webcam frame
-        await value = predict();
+        
+        value = predict();
         show_value(value);
         window.requestAnimationFrame(loop);
     }
