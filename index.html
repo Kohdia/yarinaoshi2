@@ -106,6 +106,19 @@
           state = "second"
         }}
     if (state=="second"){
+        document.write(num);
+        <input type="button" value="reset" id="btn">
+
+<script>
+function butotnClick(){
+    alert('Click');
+}
+
+let button = document.getElementById('btn');
+button.addEventListener('click', butotnClick);
+</script>
+    
+    }if(state == 2)
         if(prediction[0].probability.toFixed(2)>0.8){
           num2 = 1
           state = 1
