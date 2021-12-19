@@ -58,7 +58,7 @@ var value=0
     async function loop() {
         webcam.update(); // update the webcam frame
         
-        value = predict();
+        value = await predict();
         show_value(value);
         window.requestAnimationFrame(loop);
     }
@@ -68,10 +68,10 @@ var value=0
     var available = "ok"
     var state = "first"
     // run the webcam image through the image model
-    function predict() {
+   async function predict() {
         
         // predict can take in an image, video or canvas html element
-        const prediction =  model.predict(webcam.canvas);
+        const prediction =  await model.predict(webcam.canvas);
         if (state=="first"){
         if(prediction[0].probability.toFixed(2)>0.8){
           num = 1
