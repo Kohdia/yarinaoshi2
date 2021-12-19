@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+function OnButtonClick(){
+    state = first
+}</script>
 </head>
 <body>
     <div>Teachable Machine Image Model</div>
@@ -109,15 +113,9 @@
         document.write(num);
         <input type="button" value="reset" onclick="OnButtonClick();"/>
 
-<script>
-function OnButtonClick(){
-    state = first
-}
 
-
-</script>
     
-    }if(state == 2)
+    }if(state == 2){
         if(prediction[0].probability.toFixed(2)>0.8){
           num2 = 1
           state = 1
