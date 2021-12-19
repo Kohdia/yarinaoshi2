@@ -55,6 +55,8 @@
         window.requestAnimationFrame(loop);
     }
     var num =0
+    var num2 =0
+    var result = 0
     var available = "ok"
     var state = "first"
     // run the webcam image through the image model
@@ -102,6 +104,58 @@
           num = 10
           document.write(num);
           state = "second"
+        }}
+    if (state=="second"){
+        if(prediction[0].probability.toFixed(2)>0.8){
+          num2 = 1
+          document.write(num);
+          state = 1
+          result = num + num2
+        }else if(prediction[1].probability.toFixed(2)>0.8){
+          num2 = 2
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[2].probability.toFixed(2)>0.8){
+          num2 = 3
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[3].probability.toFixed(2)>0.8){
+          num2 = 4
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[4].probability.toFixed(2)>0.8){
+          num2 = 5
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[5].probability.toFixed(2)>0.8){
+          num2 = 6
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[6].probability.toFixed(2)>0.8){
+          num2 = 7
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[7].probability.toFixed(2)>0.8){
+          num2 = 8
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[8].probability.toFixed(2)>0.8){
+          num2 = 9
+          document.write(num);
+          state = 1
+            result = num + num2
+        }else if(prediction[9].probability.toFixed(2)>0.8){
+          num2 = 10
+          document.write(num);
+          state = 1
+            result = num + num2
         }}
         
     }
