@@ -107,15 +107,14 @@
         }}
     if (state=="second"){
         document.write(num);
-        <input type="button" value="reset" id="btn">
+        <input type="button" value="reset" onclick="OnButtonClick();"/>
 
 <script>
-function butotnClick(){
-    alert('Click');
+function OnButtonClick(){
+    state = first
 }
 
-let button = document.getElementById('btn');
-button.addEventListener('click', butotnClick);
+
 </script>
     
     }if(state == 2)
