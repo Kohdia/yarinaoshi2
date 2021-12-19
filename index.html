@@ -58,7 +58,7 @@ var value=0
     async function loop() {
         webcam.update(); // update the webcam frame
         
-        value = predict();
+        await value = predict();
         show_value(value);
         window.requestAnimationFrame(loop);
     }
