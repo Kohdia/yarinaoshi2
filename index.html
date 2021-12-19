@@ -58,7 +58,7 @@ var value=0
     async function loop() {
         webcam.update(); // update the webcam frame
         
-        await value = predict();
+        value = predict();
         show_value(value);
         window.requestAnimationFrame(loop);
     }
@@ -68,7 +68,7 @@ var value=0
     var available = "ok"
     var state = "first"
     // run the webcam image through the image model
-    async function predict() {
+    function predict() {
         
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
@@ -127,7 +127,7 @@ var value=0
     
         
     }
-async function show_value(value){
+function show_value(value){
 
 document.getElementById("realtime_value_area").innerHTML = value;
 }
