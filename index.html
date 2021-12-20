@@ -189,7 +189,7 @@ var value=0
         
     }
 function show_first_or_second(state){
-if (state=="culculate"){
+if (state=="calculate"){
 document.getElementById("first_or_second").innerHTML = "calculating"; 
 }else if(state == "sum"){
 document.getElementById("first_or_second").innerHTML = num +"+"+ num2; 
@@ -238,6 +238,7 @@ document.getElementById("sum_result").innerHTML = "result = " + result;
 }
 function reset(){
 state = "first"
+document.getElementById("sum_result").innerHTML = " ";
 }
     
 </script>
