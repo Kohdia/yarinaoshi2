@@ -193,14 +193,14 @@ function show_value(value){
 document.getElementById("realtime_value_area").innerHTML = value;
 }
 function change_state(){
-    if (state==first){
+    if (state=="first"){
 state = "second"}
-    else if(state==second){
+    else if(state=="second"){
     state = "sum"
     }
 }
 function sum_two_num(num,num2){
-result = str(num+num2)
+result = num+num2
 document.getElementById("sum_result").innerHTML = "result = " + result;
 }
 </script>
