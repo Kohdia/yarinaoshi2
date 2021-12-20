@@ -11,7 +11,7 @@ function OnButtonClick(){
 }</script>
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
+    <div>４D18課題　指文字で計算</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -20,6 +20,7 @@ function OnButtonClick(){
 <div id="first_or_second"></div>
 <div id="realtime_value_area"></div>
 <button type="button" onclick="change_state()">decide</button>
+<button type="button" onclick="sum_two_num(num,num2)">sum</button>
 <div id="sum_result"></div>
 <script type="text/javascript">    
 //<p id = "realtime_value_area"></p>
@@ -192,11 +193,15 @@ function show_value(value){
 document.getElementById("realtime_value_area").innerHTML = value;
 }
 function change_state(){
-state = "second"
+    if (state==first){
+state = "second"}
+    else if(state==second){
+    state = "sum"
+    }
 }
-function sum_two_num(){
-sum_result = str(num+num2)
-document.getElementById("sum_result").innerHTML = "result = " + sum_result;
+function sum_two_num(num,num2){
+result = str(num+num2)
+document.getElementById("sum_result").innerHTML = "result = " + result;
 }
 </script>
 </body>
