@@ -17,7 +17,9 @@ function OnButtonClick(){
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<div id="first_or_second"></div></br>
 <div id="realtime_value_area"></div>
+<button type="button" onclick="change_state()">decide</button>
 <script type="text/javascript">    
 //<p id = "realtime_value_area"></p>
     // More API functions here:
@@ -57,11 +59,12 @@ function OnButtonClick(){
 var value=0
     async function loop() {
         webcam.update(); // update the webcam frame
-        
+        show_first_or_second(state);
         value = await predict();
         show_value(value);
         window.requestAnimationFrame(loop);
     }
+    
     var num =0
     var num2 =0
     var result = 0
@@ -77,59 +80,66 @@ var value=0
           num = 1
           return num;
             //document.write(num);
-          //state = "second"
+          
         }else if(prediction[1].probability.toFixed(2)>0.8){
           num = 2
           return num;
             //document.write(num);
-          //state = "second"
+          
         }else if(prediction[2].probability.toFixed(2)>0.8){
           num = 3
             return num;
           //document.write(num);
-          //state = "second"
+          
         }else if(prediction[3].probability.toFixed(2)>0.8){
           num = 4
             return num;
           //document.write(num);
-          //state = "second"
+          
         }else if(prediction[4].probability.toFixed(2)>0.8){
           num = 5
             return num;
           //document.write(num);
-          //state = "second"
+         
         }else if(prediction[5].probability.toFixed(2)>0.8){
           num = 6
             return num;
           //document.write(num);
-          //state = "second"
+         
         }else if(prediction[6].probability.toFixed(2)>0.8){
           num = 7
             return num;
           //document.write(num);
-          //state = "second"
+         
         }else if(prediction[7].probability.toFixed(2)>0.8){
           num = 8
             return num;
           //document.write(num);
-          //state = "second"
+          
         }else if(prediction[8].probability.toFixed(2)>0.8){
           num = 9
             return num;
           //document.write(num);
-          //state = "second"
+          
         }else if(prediction[9].probability.toFixed(2)>0.8){
           num = 10
             return num;
           //document.write(num);
-          //state = "second"
+          
         }}
     
         
     }
+function show_first_or_second(state){
+
+document.getElementById("first_or_second").innerHTML = state;
+}
 function show_value(value){
 
 document.getElementById("realtime_value_area").innerHTML = value;
+}
+function change_state(){
+state = "second"
 }
 </script>
 </body>
