@@ -203,7 +203,10 @@ document.getElementById("first_or_second").innerHTML = num +"×"+ num2;
 else if(state == "div"){
 document.getElementById("first_or_second").innerHTML = num +"÷"+ num2; 
 }
-document.getElementById("first_or_second").innerHTML = state + "number = ";
+else if(state == "first"){
+document.getElementById("first_or_second").innerHTML = state + "number = ";}
+else if(state == "second"){
+document.getElementById("first_or_second").innerHTML = state + "number = ";}
 }
 function show_value(value){
 
