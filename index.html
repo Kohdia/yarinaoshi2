@@ -18,9 +18,13 @@ function OnButtonClick(){
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <div id="first_or_second"></div>
-<div id="realtime_value_area"></div>
+</br><div id="realtime_value_area"></div>
 <button type="button" onclick="change_state()">decide</button>
 <button type="button" onclick="sum_two_num(num,num2)">sum</button>
+<button type="button" onclick="sub_two_num(num,num2)">sub</button>
+<button type="button" onclick="mul_two_num(num,num2)">mul</button>
+<button type="button" onclick="div_two_num(num,num2)">div</button>
+<button type="button" onclick="reset()">reset</button>
 <div id="sum_result"></div>
 <script type="text/javascript">    
 //<p id = "realtime_value_area"></p>
@@ -185,7 +189,20 @@ var value=0
         
     }
 function show_first_or_second(state){
-
+if (state=="culculate"){
+document.getElementById("first_or_second").innerHTML = "calculating"; 
+}else if(state == "sum"){
+document.getElementById("first_or_second").innerHTML = num +"+"+ num2; 
+}
+else if(state == "sub"){
+document.getElementById("first_or_second").innerHTML = num +"-"+ num2; 
+}
+else if(state == "mul"){
+document.getElementById("first_or_second").innerHTML = num +"×"+ num2; 
+}
+else if(state == "div"){
+document.getElementById("first_or_second").innerHTML = num +"÷"+ num2; 
+}
 document.getElementById("first_or_second").innerHTML = state + "number = ";
 }
 function show_value(value){
@@ -196,13 +213,33 @@ function change_state(){
     if (state=="first"){
 state = "second"}
     else if(state=="second"){
-    state = "sum"
+    state = "calculate"
     }
 }
 function sum_two_num(num,num2){
+state = "sum"
 result = num+num2
 document.getElementById("sum_result").innerHTML = "result = " + result;
 }
+function sub_two_num(num,num2){
+state = "sub"
+result = num-num2
+document.getElementById("sum_result").innerHTML = "result = " + result;
+}
+function mul_two_num(num,num2){
+state = "mul"
+result = num*num2
+document.getElementById("sum_result").innerHTML = "result = " + result;
+}
+function div_two_num(num,num2){
+state = "div"
+result = num/num2
+document.getElementById("sum_result").innerHTML = "result = " + result;
+}
+function reset(){
+state = "first"
+}
+    
 </script>
 </body>
 </html>
