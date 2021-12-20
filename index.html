@@ -17,9 +17,10 @@ function OnButtonClick(){
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-<div id="first_or_second"></div></br>
+<div id="first_or_second"></div>
 <div id="realtime_value_area"></div>
 <button type="button" onclick="change_state()">decide</button>
+<div id="sum_result"></div>
 <script type="text/javascript">    
 //<p id = "realtime_value_area"></p>
     // More API functions here:
@@ -127,12 +128,64 @@ var value=0
           //document.write(num);
           
         }}
+       if (state=="second"){
+        if(prediction[0].probability.toFixed(2)>0.8){
+          num2 = 1
+          return num2;
+            //document.write(num);
+          
+        }else if(prediction[1].probability.toFixed(2)>0.8){
+          num2 = 2
+          return num2;
+            //document.write(num);
+          
+        }else if(prediction[2].probability.toFixed(2)>0.8){
+          num2 = 3
+            return num2;
+          //document.write(num);
+          
+        }else if(prediction[3].probability.toFixed(2)>0.8){
+          num2 = 4
+            return num2;
+          //document.write(num);
+          
+        }else if(prediction[4].probability.toFixed(2)>0.8){
+          num2 = 5
+            return num2;
+          //document.write(num);
+         
+        }else if(prediction[5].probability.toFixed(2)>0.8){
+          num2 = 6
+            return num2;
+          //document.write(num);
+         
+        }else if(prediction[6].probability.toFixed(2)>0.8){
+          num2 = 7
+            return num2;
+          //document.write(num);
+         
+        }else if(prediction[7].probability.toFixed(2)>0.8){
+          num2 = 8
+            return num2;
+          //document.write(num);
+          
+        }else if(prediction[8].probability.toFixed(2)>0.8){
+          num2 = 9
+            return num2;
+          //document.write(num);
+          
+        }else if(prediction[9].probability.toFixed(2)>0.8){
+          num2 = 10
+            return num2;
+          //document.write(num);
+          
+        }}
     
         
     }
 function show_first_or_second(state){
 
-document.getElementById("first_or_second").innerHTML = state;
+document.getElementById("first_or_second").innerHTML = state + "number = ";
 }
 function show_value(value){
 
@@ -140,6 +193,10 @@ document.getElementById("realtime_value_area").innerHTML = value;
 }
 function change_state(){
 state = "second"
+}
+function sum_two_num(){
+sum_result = str(num+num2)
+document.getElementById("sum_result").innerHTML = "result = " + sum_result;
 }
 </script>
 </body>
